@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>新风尚平面电子商务网站</title>
+<link href="__ROOT__/public/css/bootstrap.css" rel="stylesheet"
+	type="text/css" media="all" />
+<link href="__ROOT__/public/css/style.css" rel="stylesheet"
+	type="text/css" media="all" />
+<link
+	href='http://fonts.googleapis.com/css?family=Raleway:400,200,600,800,700,500,300,100,900'
+	rel='stylesheet' type='text/css'>
+<link
+	href='http://fonts.googleapis.com/css?family=Arimo:400,700,700italic'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css"
+	href="__ROOT__/public/css/component.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords"
+	content="New Fashions Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script src="__ROOT__/public/js/jquery.min.js"></script>
+<script src="__ROOT__/public/js/simpleCart.min.js">
+	
+</script>
+<script src="__ROOT__/public/js/jquery.huax.js"></script>
+<!-- start menu -->
+<link href="__ROOT__/public/css/megamenu.css" rel="stylesheet"
+	type="text/css" media="all" />
+<script type="text/javascript" src="__ROOT__/public/js/megamenu.js"></script>
+<script>
+	$(document).ready(function() {
+		$(".megamenu").megamenu();
+	});
+   /* function shop(productid)
+    {
+  	  //获得购买的数量
+  	  var buynum = document.getElementById("shop"+productid).value;
+  	  
+  	  window.location = "__APP__/Cart/add/productid/"+productid+"/buynum/"+buynum;
+    }*/
+
+  /*  function cart(productid)
+    {		
+    	//console.log (productid,price,buynum)
+    	var buynum = document.getElementById("shop"+productid).value;
+    	  //获取购买的数量
+    	  $.ajax({
+    		  type:"post",
+    		  url:"__APP__/Cart/add",
+    		  data:"productid="+productid+"&buynum="+buynum+"",
+    		  dataType:"json",
+    		  success:function(msg){
+    			  var totalPrice = msg.totalPrice;
+    			  var total = msg.total;
+    			  $("#cartprice").html(totalPrice);
+    			  $("#carttotal").html(total);   			  	
+    		  }
+    	  }); 
+    }*/
+</script>
+<!-- start menu -->
+</head>
+<body>
+	<!--header-->
+	<include file="public::header" />
+	<!--header-->
+	<div class="categoires">
+		<div class="container">
+			<a href="javascript:void(0);"><div class="col-md-4 sections fashion-grid-a">
+					<h4>时尚</h4>
+					<p>dignissim</p>
+				</div></a> <a href="javascript:void(0);"><div class="col-md-4 sections fashion-grid-b">
+					<h4>美感</h4>
+					<p>fermentum</p>
+				</div></a> <a href="javascript:void(0);"><div class="col-md-4 sections fashion-grid-c">
+					<h4>创新</h4>
+					<p>vulputate</p>
+				</div></a>
+		</div>
+	</div>
+<!---->
+<div class="features" id="features">
+	 <div class="container">
+		 <div class="tabs-box">
+			<ul class="tabs-menu">
+				<li><a href="#tab1">热卖</a></li>
+				<li><a href="#tab2">流行</a></li>
+				<li><a href="#tab3">新上架</a></li>
+			</ul>
+			<div class="clearfix"> </div>
+		 <div class="tab-grids">
+		  <foreach name="arr" key="k" item="v">
+			 <div id="tab{$k+1}" class="tab-grid{$k+1}">
+ 			 <foreach name="v" key="kk" item="vv">			   				  
+				 <a href="__APP__/Product/detail/id/{$vv.id}"><div class="product-grid">				
+						<div class="more-product-info"><span>						
+						<if condition="$vv.state eq 9">HOT
+						<elseif condition="$vv.state eq 3" />NEW
+						<elseif condition="$vv.state eq 6" />RAGE</if>												
+						</span></div>						
+						<div class="product-img b-link-stripe b-animate-go  thickbox">						   
+							<img src="__ROOT__/public/images/{$vv.imagename}" class="img-responsive" alt=""/>
+							<div class="b-wrapper">
+							<h4 class="b-animate b-from-left  b-delay03">							
+							<button class="btns">商品详情</button>
+							</h4>
+							</div>
+						</div></a>						
+						<div class="product-info simpleCart_shelfItem">
+							<div class="product-info-cust">
+								<h4>{$vv.title}</h4>
+								<span class="item_price">￥{$vv.price}</span>																
+								<input type="text" class="item_quantity" id="shop{$vv.id}" value="1" />								
+								<input type="button" class="item_add" value="加入购物车" onclick="cart({$vv.id})">								
+							</div>													
+							<div class="clearfix"> </div>
+						</div>
+					</div>	
+					</foreach>	 										
+					<div class="clearfix"></div>
+			 </div>				
+			</foreach>	
+			<!--  <div id="tab2" class="tab-grid2">
+				 <a href="single.html"><div class="product-grid">
+						<div class="more-product-info"></div>						
+						<div class="product-img b-link-stripe b-animate-go  thickbox">
+							<img src="images/c1.jpg" class="img-responsive" alt=""/>
+							<div class="b-wrapper">
+							<h4 class="b-animate b-from-left  b-delay03">							
+							<button class="btns">ORDER NOW</button>
+							</h4>
+							</div>
+						</div></a>						
+						<div class="product-info simpleCart_shelfItem">
+							<div class="product-info-cust">
+								<h4>NEWLOOK</h4>
+								<span class="item_price">$187.95</span>
+								<input type="text" class="item_quantity" value="1" />
+								<input type="button" class="item_add" value="ADD">	
+							</div>													
+							<div class="clearfix"> </div>
+						</div>
+					</div>										
+					<div class="clearfix"></div>
+			 </div>
+		 
+			 <div id="tab3" class="tab-grid3">
+				  <a href="single.html"><div class="product-grid">
+						<div class="more-product-info"></div>						
+						<div class="product-img b-link-stripe b-animate-go  thickbox">
+							<img src="images/bs3.jpg" class="img-responsive" alt=""/>
+							<div class="b-wrapper">
+							<h4 class="b-animate b-from-left  b-delay03">							
+							<button class="btns">ORDER NOW</button>
+							</h4>
+							</div>
+						</div>	</a>					
+						<div class="product-info simpleCart_shelfItem">
+							<div class="product-info-cust">
+								<h4>ROADSTER</h4>
+								<span class="item_price">$160.95</span>
+								<input type="text" class="item_quantity" value="1" />
+								<input type="button" class="item_add" value="ADD">	
+							</div>													
+							<div class="clearfix"> </div>
+						</div>
+					 </div>							 			
+				   <div class="clearfix"></div>					
+			 </div>-->
+		 </div>				
+		 </div>
+				<!-- tabs-box -->
+				<!-- Comman-js-files -->
+				<script>
+					$(document)
+							.ready(
+									function() {
+										$("#tab2").hide();
+										$("#tab3").hide();
+										$(".tabs-menu a")
+												.click(
+														function(event) {
+															event
+																	.preventDefault();
+															var tab = $(this)
+																	.attr(
+																			"href");
+															$(
+																	".tab-grid1,.tab-grid2,.tab-grid3")
+																	.not(tab)
+																	.css(
+																			"display",
+																			"none");
+															$(tab).fadeIn(
+																	"slow");
+														});
+										$("ul.tabs-menu li a")
+												.click(
+														function() {
+															$(this)
+																	.parent()
+																	.addClass(
+																			"active a");
+															$(this)
+																	.parent()
+																	.siblings()
+																	.removeClass(
+																			"active a");
+														});
+									});
+				</script>
+				<!-- Comman-js-files -->
+			</div>
+		</div>
+		<!--fotter-->
+		<div class="fotter">
+			<div class="container">
+				<div class="col-md-6 contact">
+					<form action="__APP__/User/check" method="post">
+						<input type="text" class="text" value="Name..."
+							onfocus="this.value = '';"
+							onblur="if (this.value == '') {this.value = '用户名...';}">
+						<input type="text" class="text" value="Email..."
+							onfocus="this.value = '';"
+							onblur="if (this.value == '') {this.value = '密码...';}">
+						<!-- <textarea onfocus="if(this.value == 'Message...') this.value='';"
+							onblur="if(this.value == '') this.value='Message...';">Message...</textarea> -->
+						<div class="clearfix"></div>
+						<input type="submit" value="SUBMIT">
+					</form>
+
+				</div>
+				<div class="col-md-6 ftr-left">
+					<div class="ftr-list">
+						<ul>
+							<li><a href="#">主页</a></li>
+							<li><a href="__APP__/public/about/tid/-1">关于我们</a></li>							
+							<li><a href="__APP__/Index/shop/tid/-2">推荐</a></li>
+							<li><a href="__APP__/Product/lister/tid/1">男人</a></li>
+							<li><a href="__APP__/Product/lister/tid/2">女人</a></li>
+						</ul>
+					</div>
+					<div class="ftr-list2">
+						<ul>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+					<h4>FOLLOW US</h4>
+					<div class="social-icons">
+						<a href="#"><span class="in"> </span></a> <a href="#"><span
+							class="you"> </span></a> <a href="#"><span class="be"> </span></a> <a
+							href="#"><span class="twt"> </span></a> <a href="#"><span
+							class="fb"> </span></a>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<!--fotter//-->
+		<include file="public::footer" />
+		<!--fotter//-->
+</body>
+</html>

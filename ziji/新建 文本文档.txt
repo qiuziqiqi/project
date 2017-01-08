@@ -1,0 +1,3 @@
+create database projectfad;
+use projectfad;
+source d:/fad.sql;
