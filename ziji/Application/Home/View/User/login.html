@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>新风尚平面电子商务网站</title>
+<link href="__ROOT__/public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="__ROOT__/public/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,200,600,800,700,500,300,100,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Arimo:400,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="__ROOT__/public/css/component.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="New Fashions Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" 
+		/>		
+<script src="__ROOT__/public/js/jquery.min.js"></script>
+<script src="__ROOT__/public/js/simpleCart.min.js"> </script>
+<!-- start menu -->
+<link href="__ROOT__/public/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="__ROOT__/public/js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<!-- start menu -->
+</head>
+<body>
+<!--header-->
+<include file="public::header2" />
+
+<!--header//-->
+<div class="login">
+	 <div class="container">
+			<ol class="breadcrumb">
+		  <li><a href="__APP__/Index/index">主页</a></li>
+		  <li class="active">登录</li>
+		 </ol>
+		 <h2>登录</h2>
+		 <div class="col-md-6 log">		 
+				 <p>欢迎，请输入以下继续。</p>
+				 <form action="__APP__/User/check" method="post">
+					 <h5>用户名 :</h5>	
+					 <input type="text" name="username" required="required">
+					 <h5>密码 :</h5>
+					 <input type="password" name="password" required="required">
+					 <h5>验证码 :</h5>			 
+ 					 <input type="text" name="checkCode" required="required"><img id="myImg" onclick="javascript:this.src='__APP__/User/code/ran/'+Math.random();"  src="__APP__/User/code" align="absmiddle">					
+					 <input type="hidden" name="s" value="{$Think.get.s}" />
+					 <input type="submit" value="登录">
+<!-- 忘记密码功能 					  <a href="#">Forgot Password ?</a> -->
+				 </form>				 
+		 </div>
+		  <div class="col-md-6 login-right">
+			  	<h3>注册新用户</h3>
+				<p>创建一个账户可以使您体验更快捷的结算过程，并能自定义多个送货地址，查看和跟踪您的订单以及享受更多其他服务。</p>
+				<a class="acount-btn" href="__APP__/User/reg">注册</a>
+		 </div>
+		 <div class="clearfix"></div>		 
+		 
+	 </div>
+</div>
+<!--fotter-->
+<include file="public::footer" />
+<!--fotter//-->	
+</body>
+</html>
+		

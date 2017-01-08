@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>新风尚平面电子商务网站</title>
+<link href="__ROOT__/public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="__ROOT__/public/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,200,600,800,700,500,300,100,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Arimo:400,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="__ROOT__/public/css/component.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="New Fashions Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" 
+		/>
+<script src="__ROOT__/public/js/jquery.min.js"></script>
+<script src="__ROOT__/public/js/simpleCart.min.js"> </script>
+<!-- start menu -->
+<link href="__ROOT__/public/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="__ROOT__/public/js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<!-- start menu -->
+</head>
+<body>
+<!--header-->
+<include file="public::header2" />
+<!--header//-->
+<!--Single Page starts Here-->
+<div class="product-main">
+	 <div class="container">
+		 <ol class="breadcrumb">
+		  <!-- <li><a href="index.html">Home</a></li> -->
+		  <li class="active">首页{$pArr.typestr}</li>
+		 </ol>
+		 <div class="ctnt-bar cntnt">
+			 <div class="content-bar">
+				 <div class="single-page">					 
+					 <!--Include the Etalage files-->
+						<link rel="stylesheet" href="__ROOT__/public/css/etalage.css">
+						<script src="__ROOT__/public/js/jquery.etalage.min.js"></script>
+					 <!-- Include the Etalage files -->
+					 <script>
+							jQuery(document).ready(function($){
+					
+								$('#etalage').etalage({
+									thumb_image_width: 300,
+									thumb_image_height: 400,
+									source_image_width: 700,
+									source_image_height: 800,
+									show_hint: true,
+									click_callback: function(image_anchor, instance_id){
+										alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+									}
+								});
+								// This is for the dropdown list example:
+								$('.dropdownlist').change(function(){
+									etalage_show( $(this).find('option:selected').attr('class') );
+								});
+					
+							});
+						</script>
+						<!--//details-product-slider-->
+					 <div class="details-left-slider">
+						  <ul id="etalage">
+						<foreach name="imageArr" item="v">	 
+							 <li>
+								<img class="etalage_thumb_image" src="__ROOT__/public/images/{$v.imagename}" />
+								<img class="etalage_source_image" src="__ROOT__/public/images/{$v.imagename}" />
+							 </li>
+						</foreach>
+<!-- 							 <li>
+								<img class="etalage_thumb_image" src="__ROOT__/public/images/s2.jpg" />
+								<img class="etalage_source_image" src="__ROOT__/public/images/s2.jpg"/>
+							 </li>
+							 <li>
+								<img class="etalage_thumb_image" src="__ROOT__/public/images/s3.jpg" />
+								<img class="etalage_source_image" src="__ROOT__/public/images/s3.jpg" />
+							 </li>
+							 <li>
+								<img class="etalage_thumb_image" src="__ROOT__/public/images/s4.jpg" />
+								<img class="etalage_source_image" src="__ROOT__/public/images/s4.jpg" />
+							 </li> -->
+							 <div class="clearfix"></div>
+						 </ul>
+					 </div>
+					 <div class="details-left-info">
+							<h3>{$pArr.title}</h3>						
+							<p>$ {$pArr.price} </p>
+							<p class="qty">数量 ::</p><input min="1" type="number" id="shop{$pArr.id}" name="quantity" value="1" class="form-control input-small">
+							<div class="btn_form">
+								<a href="#" onclick="cart({$pArr.id})">加入购物车</a>
+							</div>
+							<div class="flower-type">
+							<p>型号  ::<a href="#">{$pArr.id}</a></p>
+							<p>品牌  ::<a href="#">{$pArr.bname}</a></p>
+							</div>
+							<h5>商品描述  ::</h5>
+							<p class="desc">{$pArr.content}</p>
+					 </div>
+					 <div class="clearfix"></div>				 	
+				 </div>
+			 </div>
+		 </div>		 
+		 <div class="clearfix"></div>
+<!-- 		 <div class="single-bottom2">
+			 <h6>Related Products</h6>
+				<div class="rltd-posts">
+					 <div class="col-md-3 pst1">
+						 <img src="__ROOT__/public/images/ab3.jpg" alt=""/>
+						 <h4><a href="products.html">NEWLOOK</a></h4>
+						 <a class="pst-crt" href="cart.html">ADD TO CART</a>
+					 </div>
+					 <div class="col-md-3 pst1">
+						 <img src="__ROOT__/public/images/c1.jpg" alt=""/>
+						 <h4><a href="products.html">NEWLOOK</a></h4>
+						 <a class="pst-crt" href="cart.html">ADD TO CART</a>
+					 </div>
+					 <div class="col-md-3 pst1">
+						 <img src="__ROOT__/public/images/ab4.jpg" alt=""/>
+						 <h4><a href="products.html">SAREES</a></h4>
+						 <a class="pst-crt" href="cart.html">ADD TO CART</a>
+					 </div>
+					 <div class="col-md-3 pst1">
+						 <img src="__ROOT__/public/images/c5.jpg" alt=""/>
+						 <h4><a href="products.html">MANGO</a></h4>
+						 <a class="pst-crt" href="cart.html">ADD TO CART</a>
+					 </div>
+					 <div class="clearfix"></div>
+				</div>
+		 </div>	 -->
+	 </div>
+</div>
+<!--fotter-->
+<include file="public::footer" />
+<!--fotter//-->
+
+</body>
+</html>

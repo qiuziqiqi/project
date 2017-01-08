@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>新风尚平面电子商务网站</title>
+<link href="__ROOT__/public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="__ROOT__/public/css/form.css" rel="stylesheet" type="text/css" media="all" />
+<link href="__ROOT__/public/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<script src="__ROOT__/public/js/jquery.min.js"></script>
+<script src="__PUBLIC__/js/jquery-1.8.0.js" ></script> 
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,200,600,800,700,500,300,100,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Arimo:400,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="__ROOT__/public/css/component.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="New Fashions Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" 
+		/>
+<script src="__ROOT__/public/js/jquery.easydropdown.js"></script>
+<script src="__ROOT__/public/js/jquery.min.js"></script>
+<script src="__ROOT__/public/js/simpleCart.min.js"> </script>
+<!-- start menu -->
+<link href="__ROOT__/public/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="__ROOT__/public/js/megamenu.js"></script>
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+
+<script>
+function getBrand(id){
+	//启动ajax，去获取一级分类下的品牌
+	$.ajax({
+		url:'__URL__/getbrand',
+		data:{'id':id},//firstid=id&a=6
+		success:function(re){
+			
+			//alert(re);
+			var myobj=eval(re);  
+			//alert(myobj)
+/* 			var a = myobj.length;
+			var k = 6;
+			if(k > a){
+				$("#div"+k).hide();
+			} */
+ 			 for(var i=0;i<myobj.length;i++){ 
+ 				//($("#a"+i).attr("href",""__APP__/Product/detail/id/"+myobj[i].id"));				 
+				($("#price"+i).html("￥"+myobj[i].price));
+				($("#image"+i).attr("src","__ROOT__/public/images/"+myobj[i].imagename));
+				($("#title"+i).html(myobj[i].title));
+				}   
+
+		}
+	})
+}
+</script>	  
+<!-- start menu -->
+</head>
+<body>
+<!--header-->
+<include file="public::header2" />
+<!--header//-->
+<div class="product-model">	 
+	 <div class="container">
+		 <ol class="breadcrumb">
+		  <li><a href="index.html">主页</a></li>
+		  <li class="active">{$tname.tname}</li>
+		 </ol>
+			<h2>OUR PRODUCTS</h2>			
+		 <div class="col-md-9 product-model-sec">
+		 
+		 		<foreach  id="getbrand{$k}" name="arr" key="k" item="v">	
+					<!-- <div id="div{$k}" class="getnum">-->			  	
+					<a id="a{$k+1}" href="__APP__/Product/detail/id/{$v.id}"><div class="product-grid love-grid">
+						<div class="more-product"><span> </span></div>						
+						<div class="product-img b-link-stripe b-animate-go  thickbox">
+							<img id="image{$k}" src="__ROOT__/public/images/{$v.imagename}" class="img-responsive" alt=""/>
+							<div class="b-wrapper">
+							<h4 class="b-animate b-from-left  b-delay03">							
+							<button class="btns">现在订购</button>
+							</h4>
+							</div>
+						</div></a>						
+						<div class="product-info simpleCart_shelfItem">
+							<div class="product-info-cust">
+								<h4 id="title{$k}">{$v.title}</h4>
+								<span id="price{$k}" class="item_price">￥{$v.price}</span>
+								<input type="text" class="item_quantity" id="shop{$v.id}" value="1" />
+								<input type="button" class="item_add items" value="加入购物车" onclick="cart({$v.id})">
+							</div>											
+							<div class="clearfix"> </div>
+						</div>
+						<!-- </div>	 -->																																					
+					</div>							
+					</foreach>
+					
+					 										
+			</div>
+			<div class="rsidebar span_1_of_left">
+				 <section  class="sky-form">
+					 <div class="product_right">
+						 <h3 class="m_2">分类</h3>
+						  <foreach name="larr" key="k" item="v">
+							<div class="tab{$k+1}">
+							 <ul class="place">								
+								 <li class="sort"><a href="__APP__/Product/lister/tid/{$v.fid}/tstr/{$v.fid}>{$v.id}">{$v.tname}</a></li>
+								 
+									<div class="clearfix"> </div>
+							  </ul>
+					      </div>
+					      </foreach>						  
+						  						  
+						  <!--script-->
+						<script>
+							$(document).ready(function(){
+								$(".tab1 .single-bottom").hide();
+								$(".tab2 .single-bottom").hide();
+								$(".tab3 .single-bottom").hide();
+								$(".tab4 .single-bottom").hide();
+								$(".tab5 .single-bottom").hide();
+								
+								$(".tab1 ul").click(function(){
+									$(".tab1 .single-bottom").slideToggle(300);
+									$(".tab2 .single-bottom").hide();
+									$(".tab3 .single-bottom").hide();
+									$(".tab4 .single-bottom").hide();
+									$(".tab5 .single-bottom").hide();
+								})
+								$(".tab2 ul").click(function(){
+									$(".tab2 .single-bottom").slideToggle(300);
+									$(".tab1 .single-bottom").hide();
+									$(".tab3 .single-bottom").hide();
+									$(".tab4 .single-bottom").hide();
+									$(".tab5 .single-bottom").hide();
+								})
+								$(".tab3 ul").click(function(){
+									$(".tab3 .single-bottom").slideToggle(300);
+									$(".tab4 .single-bottom").hide();
+									$(".tab5 .single-bottom").hide();
+									$(".tab2 .single-bottom").hide();
+									$(".tab1 .single-bottom").hide();
+								})
+								$(".tab4 ul").click(function(){
+									$(".tab4 .single-bottom").slideToggle(300);
+									$(".tab5 .single-bottom").hide();
+									$(".tab3 .single-bottom").hide();
+									$(".tab2 .single-bottom").hide();
+									$(".tab1 .single-bottom").hide();
+								})	
+								$(".tab5 ul").click(function(){
+									$(".tab5 .single-bottom").slideToggle(300);
+									$(".tab4 .single-bottom").hide();
+									$(".tab3 .single-bottom").hide();
+									$(".tab2 .single-bottom").hide();
+									$(".tab1 .single-bottom").hide();
+								})	
+							});
+						</script>
+						<!-- script -->	
+			 
+				 </section>
+				 <section  class="sky-form">
+						<h4>品牌</h4>
+							<foreach name="lbarr" key="k" item="v">								
+							 <ul class="place">							
+								 <li class="sort"><a href="javascript:getBrand({$v.id})">{$v.bname}</a></li>
+									<div class="clearfix"> </div>
+							  </ul>
+					      </foreach>
+				   </section>		             
+			 </div>			 
+			 <div class="clearfix"></div>
+				<center>{$pageStr}</center>
+		</div>
+</div>	
+
+<!--fotter-->
+<include file="public::footer" />
+<!--fotter//-->
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<script type="text/javascript">
+function cart(productid)
+{		
+	//console.log (productid,price,buynum)
+	var buynum = document.getElementById("shop"+productid).value;
+	  //获取购买的数量
+	  $.ajax({
+		  type:"post",
+		  url:"__APP__/Cart/add",
+		  data:"productid="+productid+"&buynum="+buynum+"",
+		  dataType:"json",
+		  success:function(msg){
+			  var totalPrice = msg.totalPrice;
+			  var total = msg.total;
+			  $("#cartprice").html(totalPrice);
+			  $("#carttotal").html(total);   			  	
+		  }
+	  }); 
+}
+function logout()
+{
+	  if(confirm("是否退出登陆？")){
+		  window.location = "__APP__/User/logout";
+	  }
+}
+</script>
+<div class="header2 text-center">
+	 <div class="container">
+		 <div class="main-header">
+			  <div class="carting">
+				 <ul>
+						<li>
+						<if condition="$Think.session.user == NULL">
+					    <h3><a href="__APP__/User/login">登录</a></h3>  
+					    <else/>
+					    <h3><a href="#" onclick="logout()">退出</a></h3>
+					    </if>
+    					</li>
+				</ul>
+				 </div>
+			 <div class="logo">
+				 <h3><a href="__APP__/Index">NEW FASHIONS</a></h3>
+			  </div>			  
+				<div class="box_1">
+					<a href="__APP__/Cart/index"><h3>
+							购物车: <span id="cartprice">共{$totalPrice}元</span>(<span id="carttotal">{$total}</span>件宝贝)<img
+								src="__ROOT__/public/images/cart.png" alt="" />
+						</h3></a>
+
+				</div>
+			 
+			 <div class="clearfix"></div>
+		 </div>
+		 <ul class="megamenu skyblue">
+			<li><a href="__APP__/Index/index">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>							
+<foreach name='headerTypeArr' item='v'>
+  <li <if condition="$headerTid eq $v['id']">class='active'</if> ><a  href="__APP__/Product/lister/tid/{$v.id}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{$v['tname']}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+ </foreach>
+				<li <if condition="$headerTid eq -1">class='active'</if> ><a href="__APP__/public/about/tid/-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于我们&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>			
+				<!-- <li <if condition="$headerTid eq -2">class='active'</if> ><a href="__APP__/public/about/tid/-2">&nbsp;联系我们&nbsp;</a> -->
+				<li <if condition="$headerTid eq -2">class='active'</if> ><a href="__APP__/Index/shop/tid/-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更多推荐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>					
+				</li>			
+				
+				</ul>			
+			  <div class="clearfix"></div> 
+	 </div>
+</div>
