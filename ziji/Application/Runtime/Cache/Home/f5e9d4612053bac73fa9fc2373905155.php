@@ -2,21 +2,21 @@
 <html>
 <head>
 <title>新风尚平面电子商务网站</title>
-<link href="/zj/project/public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="/zj/project/public/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/myproject/ziji/public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/myproject/ziji/public/css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,200,600,800,700,500,300,100,900' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,700italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="/zj/project/public/css/component.css" />
+<link rel="stylesheet" type="text/css" href="/myproject/ziji/public/css/component.css" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="New Fashions Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" 
 		/>
-<script src="/zj/project/public/js/jquery.min.js"></script>
-<script src="/zj/project/public/js/simpleCart.min.js"> </script>
+<script src="/myproject/ziji/public/js/jquery.min.js"></script>
+<script src="/myproject/ziji/public/js/simpleCart.min.js"> </script>
 <!-- start menu -->
-<link href="/zj/project/public/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="/zj/project/public/js/megamenu.js"></script>
+<link href="/myproject/ziji/public/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/myproject/ziji/public/js/megamenu.js"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <!-- start menu -->
 </head>
@@ -30,7 +30,7 @@ function cart(productid)
 	  //获取购买的数量
 	  $.ajax({
 		  type:"post",
-		  url:"/zj/project/index.php/Cart/add",
+		  url:"/myproject/ziji/index.php/Cart/add",
 		  data:"productid="+productid+"&buynum="+buynum+"",
 		  dataType:"json",
 		  success:function(msg){
@@ -44,7 +44,7 @@ function cart(productid)
 function logout()
 {
 	  if(confirm("是否退出登陆？")){
-		  window.location = "/zj/project/index.php/User/logout";
+		  window.location = "/myproject/ziji/index.php/User/logout";
 	  }
 }
 </script>
@@ -54,19 +54,19 @@ function logout()
 			  <div class="carting">
 				 <ul>
 						<li>
-						<?php if($_SESSION['user']== NULL): ?><h3><a href="/zj/project/index.php/User/login">登录</a></h3>  
+						<?php if($_SESSION['user']== NULL): ?><h3><a href="/myproject/ziji/index.php/User/login">登录</a></h3>  
 					    <?php else: ?>
 					    <h3><a href="#" onclick="logout()">退出</a></h3><?php endif; ?>
     					</li>
 				</ul>
 				 </div>
 			 <div class="logo">
-				 <h3><a href="/zj/project/index.php/Index">NEW FASHIONS</a></h3>
+				 <h3><a href="/myproject/ziji/index.php/Index">NEW FASHIONS</a></h3>
 			  </div>			  
 				<div class="box_1">
-					<a href="/zj/project/index.php/Cart/index"><h3>
+					<a href="/myproject/ziji/index.php/Cart/index"><h3>
 							购物车: <span id="cartprice">共<?php echo ($totalPrice); ?>元</span>(<span id="carttotal"><?php echo ($total); ?></span>件宝贝)<img
-								src="/zj/project/public/images/cart.png" alt="" />
+								src="/myproject/ziji/public/images/cart.png" alt="" />
 						</h3></a>
 
 				</div>
@@ -74,11 +74,11 @@ function logout()
 			 <div class="clearfix"></div>
 		 </div>
 		 <ul class="megamenu skyblue">
-			<li><a href="/zj/project/index.php/Index/index">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>							
-<?php if(is_array($headerTypeArr)): foreach($headerTypeArr as $key=>$v): ?><li <?php if($headerTid == $v['id']): ?>class='active'<?php endif; ?> ><a  href="/zj/project/index.php/Product/lister/tid/<?php echo ($v["id"]); ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($v['tname']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li><?php endforeach; endif; ?>
-				<li <?php if($headerTid == -1): ?>class='active'<?php endif; ?> ><a href="/zj/project/index.php/public/about/tid/-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于我们&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>			
-				<!-- <li <?php if($headerTid == -2): ?>class='active'<?php endif; ?> ><a href="/zj/project/index.php/public/about/tid/-2">&nbsp;联系我们&nbsp;</a> -->
-				<li <?php if($headerTid == -2): ?>class='active'<?php endif; ?> ><a href="/zj/project/index.php/Index/shop/tid/-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更多推荐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>					
+			<li><a href="/myproject/ziji/index.php/Index/index">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>							
+<?php if(is_array($headerTypeArr)): foreach($headerTypeArr as $key=>$v): ?><li <?php if($headerTid == $v['id']): ?>class='active'<?php endif; ?> ><a  href="/myproject/ziji/index.php/Product/lister/tid/<?php echo ($v["id"]); ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($v['tname']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li><?php endforeach; endif; ?>
+				<li <?php if($headerTid == -1): ?>class='active'<?php endif; ?> ><a href="/myproject/ziji/index.php/public/about/tid/-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于我们&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>			
+				<!-- <li <?php if($headerTid == -2): ?>class='active'<?php endif; ?> ><a href="/myproject/ziji/index.php/public/about/tid/-2">&nbsp;联系我们&nbsp;</a> -->
+				<li <?php if($headerTid == -2): ?>class='active'<?php endif; ?> ><a href="/myproject/ziji/index.php/Index/shop/tid/-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更多推荐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>					
 				</li>			
 				
 				</ul>			
@@ -97,8 +97,8 @@ function logout()
 			 <div class="content-bar">
 				 <div class="single-page">					 
 					 <!--Include the Etalage files-->
-						<link rel="stylesheet" href="/zj/project/public/css/etalage.css">
-						<script src="/zj/project/public/js/jquery.etalage.min.js"></script>
+						<link rel="stylesheet" href="/myproject/ziji/public/css/etalage.css">
+						<script src="/myproject/ziji/public/js/jquery.etalage.min.js"></script>
 					 <!-- Include the Etalage files -->
 					 <script>
 							jQuery(document).ready(function($){
@@ -124,20 +124,20 @@ function logout()
 					 <div class="details-left-slider">
 						  <ul id="etalage">
 						<?php if(is_array($imageArr)): foreach($imageArr as $key=>$v): ?><li>
-								<img class="etalage_thumb_image" src="/zj/project/public/images/<?php echo ($v["imagename"]); ?>" />
-								<img class="etalage_source_image" src="/zj/project/public/images/<?php echo ($v["imagename"]); ?>" />
+								<img class="etalage_thumb_image" src="/myproject/ziji/public/images/<?php echo ($v["imagename"]); ?>" />
+								<img class="etalage_source_image" src="/myproject/ziji/public/images/<?php echo ($v["imagename"]); ?>" />
 							 </li><?php endforeach; endif; ?>
 <!-- 							 <li>
-								<img class="etalage_thumb_image" src="/zj/project/public/images/s2.jpg" />
-								<img class="etalage_source_image" src="/zj/project/public/images/s2.jpg"/>
+								<img class="etalage_thumb_image" src="/myproject/ziji/public/images/s2.jpg" />
+								<img class="etalage_source_image" src="/myproject/ziji/public/images/s2.jpg"/>
 							 </li>
 							 <li>
-								<img class="etalage_thumb_image" src="/zj/project/public/images/s3.jpg" />
-								<img class="etalage_source_image" src="/zj/project/public/images/s3.jpg" />
+								<img class="etalage_thumb_image" src="/myproject/ziji/public/images/s3.jpg" />
+								<img class="etalage_source_image" src="/myproject/ziji/public/images/s3.jpg" />
 							 </li>
 							 <li>
-								<img class="etalage_thumb_image" src="/zj/project/public/images/s4.jpg" />
-								<img class="etalage_source_image" src="/zj/project/public/images/s4.jpg" />
+								<img class="etalage_thumb_image" src="/myproject/ziji/public/images/s4.jpg" />
+								<img class="etalage_source_image" src="/myproject/ziji/public/images/s4.jpg" />
 							 </li> -->
 							 <div class="clearfix"></div>
 						 </ul>
@@ -165,22 +165,22 @@ function logout()
 			 <h6>Related Products</h6>
 				<div class="rltd-posts">
 					 <div class="col-md-3 pst1">
-						 <img src="/zj/project/public/images/ab3.jpg" alt=""/>
+						 <img src="/myproject/ziji/public/images/ab3.jpg" alt=""/>
 						 <h4><a href="products.html">NEWLOOK</a></h4>
 						 <a class="pst-crt" href="cart.html">ADD TO CART</a>
 					 </div>
 					 <div class="col-md-3 pst1">
-						 <img src="/zj/project/public/images/c1.jpg" alt=""/>
+						 <img src="/myproject/ziji/public/images/c1.jpg" alt=""/>
 						 <h4><a href="products.html">NEWLOOK</a></h4>
 						 <a class="pst-crt" href="cart.html">ADD TO CART</a>
 					 </div>
 					 <div class="col-md-3 pst1">
-						 <img src="/zj/project/public/images/ab4.jpg" alt=""/>
+						 <img src="/myproject/ziji/public/images/ab4.jpg" alt=""/>
 						 <h4><a href="products.html">SAREES</a></h4>
 						 <a class="pst-crt" href="cart.html">ADD TO CART</a>
 					 </div>
 					 <div class="col-md-3 pst1">
-						 <img src="/zj/project/public/images/c5.jpg" alt=""/>
+						 <img src="/myproject/ziji/public/images/c5.jpg" alt=""/>
 						 <h4><a href="products.html">MANGO</a></h4>
 						 <a class="pst-crt" href="cart.html">ADD TO CART</a>
 					 </div>
@@ -194,7 +194,7 @@ function logout()
 			<div class="container">
 				<div class="ftr-logo">
 					<h3>
-						<a href="/zj/project/index.php/index"><b>新风尚</b></a>
+						<a href="/myproject/ziji/index.php/index"><b>新风尚</b></a>
 					</h3>
 				</div>
 				<div class="ftr-info">

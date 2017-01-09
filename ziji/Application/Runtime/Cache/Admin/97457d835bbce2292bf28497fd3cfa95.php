@@ -6,7 +6,7 @@
 <meta http-equiv="Cache-Control" content="no-cache"> 
 <meta http-equiv="Expires" content="0"> 
 <title>后台登录</title> 
-<link href="/zj/project/public/css/login.css" type="text/css" rel="stylesheet"> 
+<link href="/myproject/ziji/public/css/login.css" type="text/css" rel="stylesheet"> 
 </head> 
 <body> 
 
@@ -14,7 +14,7 @@
     <div class="message">时尚商城-管理登录</div>
     <div id="darkbannerwrap"></div>
     
-    <form action="/zj/project/admin.php/Login/check" method="post">
+    <form action="/myproject/ziji/admin.php/Login/check" method="post">
 		
 		<input name="username" placeholder="用户名" required="" type="text">
 		<hr class="hr15">
@@ -28,7 +28,7 @@
 	
 </div>
 
-<div class="copyright">© 2016时尚品牌   <a href="/zj/project/index.php" target="_blank">访问前端</a></div>
+<div class="copyright">© 2016时尚品牌   <a href="/myproject/ziji/index.php" target="_blank">访问前端</a></div>
 
 </body>
 </html>

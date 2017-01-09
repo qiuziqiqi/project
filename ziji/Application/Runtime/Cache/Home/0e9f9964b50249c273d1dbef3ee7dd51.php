@@ -2,9 +2,9 @@
 <html>
 <head>
 <title>新风尚平面电子商务网站</title>
-<link href="/ziji/public/css/bootstrap.css" rel="stylesheet"
+<link href="/myproject/ziji/public/css/bootstrap.css" rel="stylesheet"
 	type="text/css" media="all" />
-<link href="/ziji/public/css/style.css" rel="stylesheet"
+<link href="/myproject/ziji/public/css/style.css" rel="stylesheet"
 	type="text/css" media="all" />
 <link
 	href='http://fonts.googleapis.com/css?family=Raleway:400,200,600,800,700,500,300,100,900'
@@ -13,21 +13,21 @@
 	href='http://fonts.googleapis.com/css?family=Arimo:400,700,700italic'
 	rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css"
-	href="/ziji/public/css/component.css" />
+	href="/myproject/ziji/public/css/component.css" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords"
 	content="New Fashions Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script src="/ziji/public/js/jquery.min.js"></script>
-<script src="/ziji/public/js/simpleCart.min.js">
+<script src="/myproject/ziji/public/js/jquery.min.js"></script>
+<script src="/myproject/ziji/public/js/simpleCart.min.js">
 	
 </script>
-<script src="/ziji/public/js/jquery.huax.js"></script>
+<script src="/myproject/ziji/public/js/jquery.huax.js"></script>
 <!-- start menu -->
-<link href="/ziji/public/css/megamenu.css" rel="stylesheet"
+<link href="/myproject/ziji/public/css/megamenu.css" rel="stylesheet"
 	type="text/css" media="all" />
-<script type="text/javascript" src="/ziji/public/js/megamenu.js"></script>
+<script type="text/javascript" src="/myproject/ziji/public/js/megamenu.js"></script>
 <script>
 	$(document).ready(function() {
 		$(".megamenu").megamenu();
@@ -37,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
   	  //获得购买的数量
   	  var buynum = document.getElementById("shop"+productid).value;
   	  
-  	  window.location = "/ziji/index.php/Cart/add/productid/"+productid+"/buynum/"+buynum;
+  	  window.location = "/myproject/ziji/index.php/Cart/add/productid/"+productid+"/buynum/"+buynum;
     }*/
 
   /*  function cart(productid)
@@ -47,7 +47,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     	  //获取购买的数量
     	  $.ajax({
     		  type:"post",
-    		  url:"/ziji/index.php/Cart/add",
+    		  url:"/myproject/ziji/index.php/Cart/add",
     		  data:"productid="+productid+"&buynum="+buynum+"",
     		  dataType:"json",
     		  success:function(msg){
@@ -71,7 +71,7 @@ function cart(productid)
 	  //获取购买的数量
 	  $.ajax({
 		  type:"post",
-		  url:"/ziji/index.php/Cart/add",
+		  url:"/myproject/ziji/index.php/Cart/add",
 		  data:"productid="+productid+"&buynum="+buynum+"",
 		  dataType:"json",
 		  success:function(msg){
@@ -85,7 +85,7 @@ function cart(productid)
 function logout()
 {
 	  if(confirm("是否退出登陆？")){
-		  window.location = "/ziji/index.php/User/logout";
+		  window.location = "/myproject/ziji/index.php/User/logout";
 	  }
 }
 </script>
@@ -95,7 +95,7 @@ function logout()
 				<div class="carting">
 					<ul>
 						<li>
-						<?php if($_SESSION['user']== NULL): ?><a href="/ziji/index.php/User/login">登录</a> | 
+						<?php if($_SESSION['user']== NULL): ?><a href="/myproject/ziji/index.php/User/login">登录</a> | 
 					    <?php else: ?>
 					    <a href="#" onclick="logout()">退出</a><?php endif; ?>
     					</li>
@@ -107,9 +107,9 @@ function logout()
 					</h3>
 				</div>
 				<div class="box_1">
-					<a href="/ziji/index.php/Cart/index"><h3>
+					<a href="/myproject/ziji/index.php/Cart/index"><h3>
 							购物车: <span id="cartprice">共<?php echo ($totalPrice); ?>元</span>(<span id="carttotal"><?php echo ($total); ?></span>件宝贝)<img
-								src="/ziji/public/images/cart.png" alt="" />
+								src="/myproject/ziji/public/images/cart.png" alt="" />
 						</h3></a>
 <!-- 					<p>
 						<a href="javascript:;" class="simpleCart_empty">购物车为空</a>
@@ -122,12 +122,12 @@ function logout()
 
 			<!-- start header menu -->
 		<ul class="megamenu skyblue">
-			<li class="active grid "><a class="color1" href="/ziji/index.php/Index/index">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+			<li class="active grid "><a class="color1" href="/myproject/ziji/index.php/Index/index">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
 
-<?php if(is_array($headerTypeArr)): foreach($headerTypeArr as $key=>$v): ?><li <?php if($headerTid == $v['id']): ?>class='active'<?php endif; ?> ><a  href="/ziji/index.php/Product/lister/tid/<?php echo ($v["id"]); ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($v['tname']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li><?php endforeach; endif; ?>
+<?php if(is_array($headerTypeArr)): foreach($headerTypeArr as $key=>$v): ?><li <?php if($headerTid == $v['id']): ?>class='active'<?php endif; ?> ><a  href="/myproject/ziji/index.php/Product/lister/tid/<?php echo ($v["id"]); ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($v['tname']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li><?php endforeach; endif; ?>
 
-				<li <?php if($headerTid == -1): ?>class='active'<?php endif; ?> ><a href="/ziji/index.php/public/about/tid/-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于我们&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>							
-				<li <?php if($headerTid == -2): ?>class='active'<?php endif; ?> ><a href="/ziji/index.php/Index/shop/tid/-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更多推荐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>	
+				<li <?php if($headerTid == -1): ?>class='active'<?php endif; ?> ><a href="/myproject/ziji/index.php/public/about/tid/-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于我们&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>							
+				<li <?php if($headerTid == -2): ?>class='active'<?php endif; ?> ><a href="/myproject/ziji/index.php/Index/shop/tid/-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更多推荐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>	
 				</li>			
 				
 				</ul> 	
@@ -167,14 +167,14 @@ function logout()
 			<div class="clearfix"> </div>
 		 <div class="tab-grids">
 		  <?php if(is_array($arr)): foreach($arr as $k=>$v): ?><div id="tab<?php echo ($k+1); ?>" class="tab-grid<?php echo ($k+1); ?>">
- 			 <?php if(is_array($v)): foreach($v as $kk=>$vv): ?><a href="/ziji/index.php/Product/detail/id/<?php echo ($vv["id"]); ?>"><div class="product-grid">				
+ 			 <?php if(is_array($v)): foreach($v as $kk=>$vv): ?><a href="/myproject/ziji/index.php/Product/detail/id/<?php echo ($vv["id"]); ?>"><div class="product-grid">				
 						<div class="more-product-info"><span>						
 						<?php if($vv["state"] == 9): ?>HOT
 						<?php elseif($vv["state"] == 3): ?>NEW
 						<?php elseif($vv["state"] == 6): ?>RAGE<?php endif; ?>												
 						</span></div>						
 						<div class="product-img b-link-stripe b-animate-go  thickbox">						   
-							<img src="/ziji/public/images/<?php echo ($vv["imagename"]); ?>" class="img-responsive" alt=""/>
+							<img src="/myproject/ziji/public/images/<?php echo ($vv["imagename"]); ?>" class="img-responsive" alt=""/>
 							<div class="b-wrapper">
 							<h4 class="b-animate b-from-left  b-delay03">							
 							<button class="btns">商品详情</button>
@@ -289,7 +289,7 @@ function logout()
 		<div class="fotter">
 			<div class="container">
 				<div class="col-md-6 contact">
-					<form action="/ziji/index.php/User/check" method="post">
+					<form action="/myproject/ziji/index.php/User/check" method="post">
 						<input type="text" class="text" value="Name..."
 							onfocus="this.value = '';"
 							onblur="if (this.value == '') {this.value = '用户名...';}">
@@ -307,10 +307,10 @@ function logout()
 					<div class="ftr-list">
 						<ul>
 							<li><a href="#">主页</a></li>
-							<li><a href="/ziji/index.php/public/about/tid/-1">关于我们</a></li>							
-							<li><a href="/ziji/index.php/Index/shop/tid/-2">推荐</a></li>
-							<li><a href="/ziji/index.php/Product/lister/tid/1">男人</a></li>
-							<li><a href="/ziji/index.php/Product/lister/tid/2">女人</a></li>
+							<li><a href="/myproject/ziji/index.php/public/about/tid/-1">关于我们</a></li>							
+							<li><a href="/myproject/ziji/index.php/Index/shop/tid/-2">推荐</a></li>
+							<li><a href="/myproject/ziji/index.php/Product/lister/tid/1">男人</a></li>
+							<li><a href="/myproject/ziji/index.php/Product/lister/tid/2">女人</a></li>
 						</ul>
 					</div>
 					<div class="ftr-list2">
@@ -334,7 +334,7 @@ function logout()
 			<div class="container">
 				<div class="ftr-logo">
 					<h3>
-						<a href="/ziji/index.php/index"><b>新风尚</b></a>
+						<a href="/myproject/ziji/index.php/index"><b>新风尚</b></a>
 					</h3>
 				</div>
 				<div class="ftr-info">
