@@ -1,6 +1,6 @@
 <?php
-namespace Admin\Controller;
-use Think\Controller;
+namespace Admin\Controller; //存放在的目录下的说明
+use Think\Controller;//导入具体的父类文件
 class BaseController extends Controller{
 	function _initialize(){
 		if(!isset($_SESSION['admin'])){

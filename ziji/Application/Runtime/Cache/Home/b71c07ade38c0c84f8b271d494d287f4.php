@@ -2,32 +2,32 @@
 <html>
 <head>
 <title>新风尚平面电子商务网站</title>
-<link href="/ziji/project/public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="/ziji/project/public/css/form.css" rel="stylesheet" type="text/css" media="all" />
-<link href="/ziji/project/public/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<script src="/ziji/project/public/js/jquery.min.js"></script>
-<script src="/ziji/project/Public/js/jquery-1.8.0.js" ></script> 
+<link href="/myproject/ziji/public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/myproject/ziji/public/css/form.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/myproject/ziji/public/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<script src="/myproject/ziji/public/js/jquery.min.js"></script>
+<script src="/myproject/ziji/Public/js/jquery-1.8.0.js" ></script> 
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,200,600,800,700,500,300,100,900' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,700italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="/ziji/project/public/css/component.css" />
+<link rel="stylesheet" type="text/css" href="/myproject/ziji/public/css/component.css" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="New Fashions Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" 
 		/>
-<script src="/ziji/project/public/js/jquery.easydropdown.js"></script>
-<script src="/ziji/project/public/js/jquery.min.js"></script>
-<script src="/ziji/project/public/js/simpleCart.min.js"> </script>
+<script src="/myproject/ziji/public/js/jquery.easydropdown.js"></script>
+<script src="/myproject/ziji/public/js/jquery.min.js"></script>
+<script src="/myproject/ziji/public/js/simpleCart.min.js"> </script>
 <!-- start menu -->
-<link href="/ziji/project/public/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="/ziji/project/public/js/megamenu.js"></script>
+<link href="/myproject/ziji/public/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="/myproject/ziji/public/js/megamenu.js"></script>
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 
 <script>
 function getBrand(id){
 	//启动ajax，去获取一级分类下的品牌
 	$.ajax({
-		url:'/ziji/project/index.php/Product/getbrand',
+		url:'/myproject/ziji/index.php/Product/getbrand',
 		data:{'id':id},//firstid=id&a=6
 		success:function(re){
 			
@@ -40,9 +40,9 @@ function getBrand(id){
 				$("#div"+k).hide();
 			} */
  			 for(var i=0;i<myobj.length;i++){ 
- 				//($("#a"+i).attr("href",""/ziji/project/index.php/Product/detail/id/"+myobj[i].id"));				 
+ 				//($("#a"+i).attr("href",""/myproject/ziji/index.php/Product/detail/id/"+myobj[i].id"));				 
 				($("#price"+i).html("￥"+myobj[i].price));
-				($("#image"+i).attr("src","/ziji/project/public/images/"+myobj[i].imagename));
+				($("#image"+i).attr("src","/myproject/ziji/public/images/"+myobj[i].imagename));
 				($("#title"+i).html(myobj[i].title));
 				}   
 
@@ -62,7 +62,7 @@ function cart(productid)
 	  //获取购买的数量
 	  $.ajax({
 		  type:"post",
-		  url:"/ziji/project/index.php/Cart/add",
+		  url:"/myproject/ziji/index.php/Cart/add",
 		  data:"productid="+productid+"&buynum="+buynum+"",
 		  dataType:"json",
 		  success:function(msg){
@@ -76,7 +76,7 @@ function cart(productid)
 function logout()
 {
 	  if(confirm("是否退出登陆？")){
-		  window.location = "/ziji/project/index.php/User/logout";
+		  window.location = "/myproject/ziji/index.php/User/logout";
 	  }
 }
 </script>
@@ -86,19 +86,19 @@ function logout()
 			  <div class="carting">
 				 <ul>
 						<li>
-						<?php if($_SESSION['user']== NULL): ?><h3><a href="/ziji/project/index.php/User/login">登录</a></h3>  
+						<?php if($_SESSION['user']== NULL): ?><h3><a href="/myproject/ziji/index.php/User/login">登录</a></h3>  
 					    <?php else: ?>
 					    <h3><a href="#" onclick="logout()">退出</a></h3><?php endif; ?>
     					</li>
 				</ul>
 				 </div>
 			 <div class="logo">
-				 <h3><a href="/ziji/project/index.php/Index">NEW FASHIONS</a></h3>
+				 <h3><a href="/myproject/ziji/index.php/Index">NEW FASHIONS</a></h3>
 			  </div>			  
 				<div class="box_1">
-					<a href="/ziji/project/index.php/Cart/index"><h3>
+					<a href="/myproject/ziji/index.php/Cart/index"><h3>
 							购物车: <span id="cartprice">共<?php echo ($totalPrice); ?>元</span>(<span id="carttotal"><?php echo ($total); ?></span>件宝贝)<img
-								src="/ziji/project/public/images/cart.png" alt="" />
+								src="/myproject/ziji/public/images/cart.png" alt="" />
 						</h3></a>
 
 				</div>
@@ -106,11 +106,11 @@ function logout()
 			 <div class="clearfix"></div>
 		 </div>
 		 <ul class="megamenu skyblue">
-			<li><a href="/ziji/project/index.php/Index/index">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>							
-<?php if(is_array($headerTypeArr)): foreach($headerTypeArr as $key=>$v): ?><li <?php if($headerTid == $v['id']): ?>class='active'<?php endif; ?> ><a  href="/ziji/project/index.php/Product/lister/tid/<?php echo ($v["id"]); ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($v['tname']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li><?php endforeach; endif; ?>
-				<li <?php if($headerTid == -1): ?>class='active'<?php endif; ?> ><a href="/ziji/project/index.php/public/about/tid/-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于我们&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>			
-				<!-- <li <?php if($headerTid == -2): ?>class='active'<?php endif; ?> ><a href="/ziji/project/index.php/public/about/tid/-2">&nbsp;联系我们&nbsp;</a> -->
-				<li <?php if($headerTid == -2): ?>class='active'<?php endif; ?> ><a href="/ziji/project/index.php/Index/shop/tid/-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更多推荐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>					
+			<li><a href="/myproject/ziji/index.php/Index/index">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;主页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>							
+<?php if(is_array($headerTypeArr)): foreach($headerTypeArr as $key=>$v): ?><li <?php if($headerTid == $v['id']): ?>class='active'<?php endif; ?> ><a  href="/myproject/ziji/index.php/Product/lister/tid/<?php echo ($v["id"]); ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo ($v['tname']); ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li><?php endforeach; endif; ?>
+				<li <?php if($headerTid == -1): ?>class='active'<?php endif; ?> ><a href="/myproject/ziji/index.php/public/about/tid/-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于我们&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>			
+				<!-- <li <?php if($headerTid == -2): ?>class='active'<?php endif; ?> ><a href="/myproject/ziji/index.php/public/about/tid/-2">&nbsp;联系我们&nbsp;</a> -->
+				<li <?php if($headerTid == -2): ?>class='active'<?php endif; ?> ><a href="/myproject/ziji/index.php/Index/shop/tid/-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更多推荐&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>					
 				</li>			
 				
 				</ul>			
@@ -128,10 +128,10 @@ function logout()
 		 <div class="col-md-9 product-model-sec">
 		 
 		 		<?php if(is_array($arr)): foreach($arr as $k=>$v): ?><!-- <div id="div<?php echo ($k); ?>" class="getnum">-->			  	
-					<a id="a<?php echo ($k+1); ?>" href="/ziji/project/index.php/Product/detail/id/<?php echo ($v["id"]); ?>"><div class="product-grid love-grid">
+					<a id="a<?php echo ($k+1); ?>" href="/myproject/ziji/index.php/Product/detail/id/<?php echo ($v["id"]); ?>"><div class="product-grid love-grid">
 						<div class="more-product"><span> </span></div>						
 						<div class="product-img b-link-stripe b-animate-go  thickbox">
-							<img id="image<?php echo ($k); ?>" src="/ziji/project/public/images/<?php echo ($v["imagename"]); ?>" class="img-responsive" alt=""/>
+							<img id="image<?php echo ($k); ?>" src="/myproject/ziji/public/images/<?php echo ($v["imagename"]); ?>" class="img-responsive" alt=""/>
 							<div class="b-wrapper">
 							<h4 class="b-animate b-from-left  b-delay03">							
 							<button class="btns">现在订购</button>
@@ -158,7 +158,7 @@ function logout()
 						 <h3 class="m_2">分类</h3>
 						  <?php if(is_array($larr)): foreach($larr as $k=>$v): ?><div class="tab<?php echo ($k+1); ?>">
 							 <ul class="place">								
-								 <li class="sort"><a href="/ziji/project/index.php/Product/lister/tid/<?php echo ($v["fid"]); ?>/tstr/<?php echo ($v["fid"]); ?>><?php echo ($v["id"]); ?>"><?php echo ($v["tname"]); ?></a></li>
+								 <li class="sort"><a href="/myproject/ziji/index.php/Product/lister/tid/<?php echo ($v["fid"]); ?>/tstr/<?php echo ($v["fid"]); ?>><?php echo ($v["id"]); ?>"><?php echo ($v["tname"]); ?></a></li>
 								 
 									<div class="clearfix"> </div>
 							  </ul>
@@ -231,7 +231,7 @@ function logout()
 			<div class="container">
 				<div class="ftr-logo">
 					<h3>
-						<a href="/ziji/project/index.php/index"><b>新风尚</b></a>
+						<a href="/myproject/ziji/index.php/index"><b>新风尚</b></a>
 					</h3>
 				</div>
 				<div class="ftr-info">
