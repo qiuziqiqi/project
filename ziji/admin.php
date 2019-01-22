@@ -2,7 +2,7 @@
 header("content-type:text/html;charset=utf-8");
 
 define("BIND_MODULE","Admin");
-define("APP_PATH","application/");
+define("APP_PATH","Application/");
 define("APP_DEBUG",true);
 define("BUILD_DIR_SECURE",false);
 include_once 'library/ThinkPHP/ThinkPHP.php';
