@@ -274,7 +274,7 @@
 				}
 				if ($compile_template)
 				{
-					if (@include_once("class.smarttemplateparser.php"))
+					if (@include_once("../../ThinkPHP/Library/Vendor/SmartTemplate/class.smarttemplateparser.php"))
 					{
 						$this->parser = new SmartTemplateParser($this->template_dir . $this->tpl_file);
 						if (!$this->parser->compile($this->cpl_file))
@@ -313,7 +313,7 @@
 			{
 				$_top  =  $this->data;
 			}
-			if (@include_once("class.smarttemplatedebugger.php"))
+			if (@include_once("../../ThinkPHP/Library/Vendor/SmartTemplate/class.smarttemplatedebugger.php"))
 			{
 				$this->debugger = new SmartTemplateDebugger($this->template_dir . $this->tpl_file);
 				$this->debugger->start($_top);

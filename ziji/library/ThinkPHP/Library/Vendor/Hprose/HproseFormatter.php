@@ -20,9 +20,9 @@
  *                                                        *
 \**********************************************************/
 
-require_once('HproseIOStream.php');
-require_once('HproseReader.php');
-require_once('HproseWriter.php');
+require_once('../../ThinkPHP/Library/Vendor/Hprose/HproseIOStream.php');
+require_once('../../ThinkPHP/Library/Vendor/Hprose/HproseReader.php');
+require_once('../../ThinkPHP/Library/Vendor/Hprose/HproseWriter.php');
 
 class HproseFormatter {
     public static function serialize(&$var, $simple = false) {

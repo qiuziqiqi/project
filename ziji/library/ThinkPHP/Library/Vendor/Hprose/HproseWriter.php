@@ -20,9 +20,9 @@
  *                                                        *
 \**********************************************************/
 
-require_once('HproseCommon.php');
-require_once('HproseTags.php');
-require_once('HproseClassManager.php');
+require_once('../../ThinkPHP/Library/Vendor/Hprose/HproseCommon.php');
+require_once('../../ThinkPHP/Library/Vendor/Hprose/HproseTags.php');
+require_once('../../ThinkPHP/Library/Vendor/Hprose/HproseClassManager.php');
 
 class HproseSimpleWriter {
     public $stream;

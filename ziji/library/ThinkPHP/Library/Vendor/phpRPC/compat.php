@@ -30,7 +30,7 @@
  * This library is free.  You can redistribute it and/or modify it under GPL.
  */
 
-require_once("phprpc_date.php");
+require_once("../../ThinkPHP/Library/Vendor/phpRPC/phprpc_date.php");
 
 if (!function_exists('file_get_contents')) {
     function file_get_contents($filename, $incpath = false, $resource_context = null) {

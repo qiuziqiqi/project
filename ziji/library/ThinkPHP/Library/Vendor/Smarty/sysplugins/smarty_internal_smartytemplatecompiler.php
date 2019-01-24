@@ -12,7 +12,7 @@
 /**
  * @ignore
  */
-include ("smarty_internal_parsetree.php");
+include ("../../ThinkPHP/Library/Vendor/Smarty/sysplugins/smarty_internal_parsetree.php");
 
 /**
  * Class SmartyTemplateCompiler

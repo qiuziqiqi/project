@@ -20,10 +20,10 @@
  *                                                        *
 \**********************************************************/
 
-require_once('HproseTags.php');
-require_once('HproseClassManager.php');
-require_once('HproseReader.php');
-require_once('HproseWriter.php');
-require_once('HproseFormatter.php');
+require_once('../../ThinkPHP/Library/Vendor/Hprose/HproseTags.php');
+require_once('../../ThinkPHP/Library/Vendor/Hprose/HproseClassManager.php');
+require_once('../../ThinkPHP/Library/Vendor/Hprose/HproseReader.php');
+require_once('../../ThinkPHP/Library/Vendor/Hprose/HproseWriter.php');
+require_once('../../ThinkPHP/Library/Vendor/Hprose/HproseFormatter.php');
 
 ?>

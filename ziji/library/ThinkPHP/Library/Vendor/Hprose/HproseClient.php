@@ -20,8 +20,8 @@
  *                                                        *
 \**********************************************************/
 
-require_once('HproseCommon.php');
-require_once('HproseIO.php');
+require_once('../../ThinkPHP/Library/Vendor/Hprose/HproseCommon.php');
+require_once('../../ThinkPHP/Library/Vendor/Hprose/HproseIO.php');
 
 abstract class HproseClient {
     protected $url;

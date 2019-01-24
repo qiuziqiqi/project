@@ -329,7 +329,7 @@ class PHPRPC_Server {
             $session = unserialize(base64_decode($_SESSION[$this->cid]));
             if (isset($session['key'])) {
                 $this->key = $session['key'];
-                require_once('xxtea.php');
+                require_once('../../ThinkPHP/Library/Vendor/phpRPC/xxtea.php');
                 return;
             }
         }
@@ -370,7 +370,7 @@ class PHPRPC_Server {
         $this->sendError($output);
     }
     function keyExchange() {
-        require_once('bigint.php');
+        require_once('../../ThinkPHP/Library/Vendor/phpRPC/bigint.php');
         $this->initKeylen();
         if (isset($_SESSION[$this->cid])) {
             $session = unserialize(base64_decode($_SESSION[$this->cid]));
@@ -379,7 +379,7 @@ class PHPRPC_Server {
             $session = array();
         }        
         if ($this->encrypt === true) {
-            require_once('dhparams.php');
+            require_once('../../ThinkPHP/Library/Vendor/phpRPC/dhparams.php');
             $DHParams = new DHParams($this->keylen);
             $this->keylen = $DHParams->getL();
             $encrypt = $DHParams->getDHParams();
@@ -422,7 +422,7 @@ class PHPRPC_Server {
     }
     // Public Methods
     function PHPRPC_Server() {
-        require_once('compat.php');
+        require_once('../../ThinkPHP/Library/Vendor/phpRPC/compat.php');
         $this->functions = array();
         $this->charset = 'UTF-8';
         $this->debug = false;
